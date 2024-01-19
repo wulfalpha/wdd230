@@ -8,6 +8,30 @@ body {
     font-family: "Sansita", sans-serif;
 }
 
+.board {
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+}
+
+.me_tile {
+    margin: 0 auto;
+    padding: 0;
+    box-sizing: border-box;
+    max-width: 766px;
+}
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    max-width: 400px;
+    margin: auto;
+}
+
+footer {
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+}
+
 /* mobile **************************/
 header {
     background-color: #bbb;
@@ -45,7 +69,7 @@ nav a {
 }
 
 nav a:hover {
-    text-decoration:overline;
+    text-decoration: underline;
 }
 
 .active {
