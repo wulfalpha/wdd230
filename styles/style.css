@@ -32,6 +32,12 @@ footer {
     margin: 0 auto;
 }
 
+
+nav a:hover {
+    background-color : #1c1d21ff;
+    color : white;
+}
+
 /* mobile **************************/
 header {
     background-color: #bbb;
@@ -68,8 +74,10 @@ nav a {
     text-decoration: none;
 }
 
+
 nav a:hover {
-    text-decoration: underline;
+    background-color : #1c1d21ff;
+    color : white;
 }
 
 .active {

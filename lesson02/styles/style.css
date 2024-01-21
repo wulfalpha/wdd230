@@ -8,6 +8,20 @@ body {
     font-family: "Sansita", sans-serif;
 }
 
+.home-grid {
+    display: grid;
+    margin: 0 auto;
+    align-content: center; /* Updated */
+    text-align: center;
+}
+
+img {
+    margin: 0 auto;
+    padding: 0;
+    box-sizing: border-box;
+    max-width: 766px;
+}
+
 /* mobile **************************/
 header {
     background-color: #bbb;
@@ -45,7 +59,9 @@ nav a {
 }
 
 nav a:hover {
-    text-decoration:overline;
+    background-color : #1c1d21ff;
+    color : white;
+    text-align: center;
 }
 
 .active {
@@ -56,8 +72,9 @@ nav a:hover {
 @media (min-width: 640px) {
     nav ul {
         display: flex;
+        justify-content: center; /* Added for centering links */
     }
     nav ul li {
-        flex: 1 1 100%;
+        flex: 1;
     }
 }
