@@ -14,6 +14,14 @@ body {
     margin: 0 auto;
 }
 
+ol > li::before {
+    content: "🕹️ ";
+}
+ol > li::marker {
+    color: navy;
+    font-size: 2rem;
+}
+
 .me_tile {
     margin: 0 auto;
     padding: 0;
