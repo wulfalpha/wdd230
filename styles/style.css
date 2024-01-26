@@ -46,6 +46,28 @@ nav a:hover {
     color : white;
 }
 
+/* small view navigation */
+#menu {
+    font-size: 1.5rem;
+    border: 1px solid rgba(0,0,0,.3);
+    padding: 3px 7px 6px;
+    background-color: #eee;
+    color: #000;
+}
+
+/* when the button is clicked - the open class is toggled (added/removed) */
+.open a {
+    display: block;
+}
+
+#menu::before {
+    content: "☰";
+}
+
+#menu.open::before {
+    content: "❌";
+}
+
 /* mobile **************************/
 header {
     background-color: #bbb;
