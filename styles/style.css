@@ -32,7 +32,7 @@ body {
     margin: 0 auto;
 }
 
-ol li {
+ol li a{
     color: var(--color-link)
 }
 
