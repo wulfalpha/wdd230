@@ -35,6 +35,12 @@ body {
 ol li {
     color: var(--color-link)
 }
+
+ol li a:active {
+    color: var(--color-active); /* While you're clicking on the link (mouse button down), the link will turn this color */
+}
+
+
 ol li a:hover {
     color: var(--color-link-hover)
 }
