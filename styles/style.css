@@ -49,10 +49,12 @@ nav a:hover {
 /* small view navigation */
 #menu {
     font-size: 1.5rem;
-    border: 1px solid rgba(0,0,0,.3);
-    padding: 3px 7px 6px;
-    background-color: #eee;
+    border: 0;
+    background: none;
     color: #000;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
 }
 
 /* when the button is clicked - the open class is toggled (added/removed) */
@@ -60,12 +62,16 @@ nav a:hover {
     display: block;
 }
 
+.active::before {
+    content: "🕹️";  /* just a wayfinding symbol for the user */
+}
+
 #menu::before {
     content: "☰";
 }
 
 #menu.open::before {
-    content: "❌";
+    content: "❎";
 }
 
 /* mobile **************************/
@@ -121,5 +127,26 @@ nav a:hover {
     }
     nav ul li {
         flex: 1 1 100%;
+    }
+    /* Hide menu button on larger screens */
+    #menu {
+        display: none;
+    }
+}
+
+/* Show menu button on screens smaller than 768px */
+@media screen and (max-width: 768px) {
+    #menu {
+        display: block;
+    }
+
+    /* Hide regular navigation links on small screens */
+    .navigation ul {
+        display: none;
+    }
+
+    /* Show navigation links when menu is open */
+    .navigation.open ul {
+        display: block;
     }
 }
