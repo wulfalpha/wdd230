@@ -1,10 +1,14 @@
 :root {
-    --color-primary: #C0C6C8;  /* A light gray that can be used for most of the text. */
-    --color-secondary: #BBBA52;  /* A pastel yellow for highlights, such as active elements. */
-    --color-info: #4F92D4;  /* A light blue for informational elements. */
-    --color-warning: #BB8052;  /* A pastel red for error or warning messages. */
+    --color-primary: #F1F1F1; /* A very light gray to enhance the contrast. */
+    --color-active: #FFD700; /* A golden color for highlights. */
+    --color-info: #87CEEB; /* A bright sky blue for informational elements. */
+    --color-warning: #FF4500; /* Brighter color for warning messages. */
     --color-background: #1c1d21ff; /* The dark smoke background color you specified. */
     --color-nav-hover: #36454f; /* The color of navigation items on hover. */
+    --color-link: #FAB1A0;  /* Since you're using a dark theme */
+    --color-link-hover: #FF7F50; /* A coral color for link hover */
+    --color-link-focus: #BDB76B; /* A dark khaki color for link focus */
+    --color-link-visited: #8A2BE2; /* A blue violet color for visited link */
 }
 * {
     margin: 0;
@@ -27,6 +31,22 @@ body {
     align-items: center;
     margin: 0 auto;
 }
+
+ol li {
+    color: var(--color-link)
+}
+ol li a:hover {
+    color: var(--color-link-hover)
+}
+
+ol li a:focus {
+    color: var(--color-link-focus);
+}
+
+ol li a:visited {
+    color: var(--color-link-visited);
+}
+
 ol > li::before {
     content: "🕹️ ";
 }
@@ -139,7 +159,7 @@ nav a:hover {
     color : white;
 }
 .active {
-    color: var(--color-secondary);
+    color: var(--color-active);
 }
 /* Larger Views ******************************/
 @media (min-width: 640px) {
