@@ -83,9 +83,8 @@ nav a:hover {
     border: 0;
     background: none;
     color: #000;
-    position: absolute;
-    top: 1rem;
-    right: 1rem;
+    position: relative;
+    padding: 1rem;
 }
 
 /* when the button is clicked - the open class is toggled (added/removed) */
@@ -98,7 +97,7 @@ nav a:hover {
 }
 
 #menu::before {
-    content: "☰";
+    content: "🍔";
 }
 
 #menu.open::before {
