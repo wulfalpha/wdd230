@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const paragraphs = rightsSection.querySelectorAll("p");
         const now = new Date();
         const dateString = now.toLocaleString();
-        paragraphs[1].textContent = `Last modified: ${dateString}`;
+        paragraphs[1].textContent = `Date and Time: ${dateString}`;
     }
 
     let pTag = document.querySelector('.card p'); // More precise selection of p tag
