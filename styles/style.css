@@ -40,6 +40,9 @@ footer {
     margin: 0 auto;
 }
 
+.jigsaw {
+    border:0;width:88px;height:31px
+}
 
 nav a:hover {
     background-color : #1c1d21ff;
