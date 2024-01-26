@@ -5,7 +5,14 @@
 }
 
 body {
-    font-family: "Sansita", sans-serif;
+    font-family: 'Sansita', sans-serif;
+}
+
+.map {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 500px;  /* Adjust based on your preference */
 }
 
 .board {
@@ -33,11 +40,32 @@ ol > li::marker {
     max-width: 400px;
     margin: auto;
 }
+.card img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;  /* This line will make sure images cover all available space but maintains its aspect ratio. */
+    margin-top: 10px;  /* Adjust as needed to create space at the top */
+    margin-bottom: 10px;  /* Adjust as needed to create space at the bottom */
+}
 
 footer {
+    display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin: 0 auto;
+    /* Add other necessary styling */
+}
+
+#rights, #validate {
+    text-align: center;
+    padding: 10px;
+    /* Add other necessary styling */
+}
+
+.social {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .jigsaw {
