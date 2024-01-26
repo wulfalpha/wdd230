@@ -122,20 +122,21 @@ nav a:hover {
 
 /* Larger Views ******************************/
 @media (min-width: 640px) {
+    /* Hide menu button on larger screens */
+    #menu {
+        display: none;
+    }
     nav ul {
         display: flex;
     }
     nav ul li {
         flex: 1 1 100%;
     }
-    /* Hide menu button on larger screens */
-    #menu {
-        display: none;
-    }
+
 }
 
 /* Show menu button on screens smaller than 768px */
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 640px) {
     #menu {
         display: block;
     }
