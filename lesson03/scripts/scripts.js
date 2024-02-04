@@ -1,13 +1,26 @@
-window.onload = function() {
-    // Get the paragraphs in the colors section
-    var colorParagraphs = document.getElementById('colors').getElementsByTagName('p');
+const hamButton = document.querySelector('#menu');
+const navigation = document.querySelector('.navigation');
 
-    // Iterate over each paragraph
-    for(let i = 0; i < colorParagraphs.length; ++i) {
-        // Extract the color slug from the paragraph by splitting the text content on brackets and taking the second value
-        let color = colorParagraphs[i].textContent.split('[')[1].split(']')[0];
+hamButton.addEventListener('click', () => {
+    navigation.classList.toggle('open');
+    hamButton.classList.toggle('open');
+});
 
-        // Replace the slug with a span element containing the actual color
-        colorParagraphs[i].innerHTML = colorParagraphs[i].textContent.replace('[' + color + ']', '<span style="background-color: #' + color + ';">&nbsp;&nbsp;&nbsp;</span>');
+!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src='https://weatherwidget.io/js/widget.min.js';fjs.parentNode.insertBefore(js,fjs);}}(document,'script','weatherwidget-io-js');
+
+// Assuming you have a way to calculate or get site visits
+let visits = 123; // Placeholder for visits
+
+document.addEventListener('DOMContentLoaded', () => {
+    const rightsSection = document.querySelector("#rights");
+    const paragraphs = rightsSection.querySelectorAll("p");
+    const now = new Date();
+    const dateString = now.toLocaleString();
+    paragraphs[1].textContent = `Date and Time: ${dateString}`;
+    document.querySelector("[data-modified-date]").textContent = document.lastModified;
+
+    let pTag = document.querySelector('.card p'); // More precise selection of p tag
+    if(pTag && visits) {
+        pTag.innerHTML = pTag.innerHTML.replace('[visits]', visits);
     }
-};
+});
