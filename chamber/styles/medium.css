@@ -1,0 +1,88 @@
+/* small view navigation */
+#menu {
+    font-size: 1.5rem;
+    border: 0;
+    background: none;
+    color: #000;
+    position: relative;
+    padding: 1rem;
+}
+/* when the button is clicked - the open class is toggled (added/removed) */
+.open a {
+    display: block;
+}
+.active::before {
+    content: "🕹️";  /* just a wayfinding symbol for the user */
+}
+#menu::before {
+    content: "🍔";
+}
+#menu.open::before {
+    content: "❎";
+}
+/* mobile **************************/
+header {
+    background-color: var(--color-info);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
+header,
+main {
+    max-width: 767px;
+    margin: 0 auto;
+}
+h1 {
+    font-size: 2rem;
+}
+nav {
+    background-color: var(--color-background);
+    margin: 0 auto;
+    max-width: 800px;
+}
+nav ul {
+    list-style-type: none;
+}
+nav a {
+    display: block;
+    color: var(--color-primary);
+    text-align: center;
+    padding: 1rem;
+    text-decoration: none;
+}
+
+nav a:hover {
+    background-color : var(--color-nav-hover);
+    color : white;
+}
+.active {
+    color: var(--color-active);
+}
+@media (min-width: 640px) {
+    /* Hide menu button on larger screens */
+    #menu {
+        display: none;
+    }
+    nav ul {
+        display: flex;
+    }
+    nav ul li {
+        flex: 1 1 100%;
+    }
+}
+/* Show menu button on screens smaller than 768px */
+@media screen and (max-width: 640px) {
+    #menu {
+        display: block;
+    }
+    /* Hide regular navigation links on small screens */
+    .navigation ul {
+        display: none;
+    }
+    /* Show navigation links when menu is open */
+    .navigation.open ul {
+        display: block;
+    }
+}

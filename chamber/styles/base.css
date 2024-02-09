@@ -1,0 +1,71 @@
+:root {
+    --color-primary: #F1F1F1; /* A very light gray to enhance the contrast. */
+    --color-active: #FFD700; /* A golden color for highlights. */
+    --color-info: #1f4451; /* A bright sky blue for informational elements. */
+    --color-warning: #FF4500; /* Brighter color for warning messages. */
+    --color-background: #1c1d21ff; /* The dark smoke background color you specified. */
+    --color-nav-hover: #36454f; /* The color of navigation items on hover. */
+    --color-link: #FAB1A0;  /* Since you're using a dark theme */
+    --color-link-hover: #FF7F50; /* A coral color for link hover */
+    --color-link-focus: #BDB76B; /* A dark khaki color for link focus */
+    --color-link-visited: #fe7c7c; /* A blue violet color for visited link */
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.cta-button {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    padding: 10px 20px;
+    background: rgba(0,0,0,0.5);
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease; /* transitions */
+}
+.cta-button:hover {
+    background: rgba(255,255,255,0.5);
+    color: black;
+    /* Add the necessary hover effects */
+}
+#hero {
+    position: relative;
+}
+body {
+    font-family: 'Sansita', sans-serif;
+    color: var(--color-primary);
+    background-color: var(--color-background);
+}
+.footer, .map, .board, ol li a, .card,  .card img, #rights, #validate .social, .jigsaw  {
+    /* Styles common to each file*/
+}
+#darkModeBtn {
+    position: absolute;
+    top: 70px;
+    right: 30px;
+    background: var(--color-active);
+    color: var(--color-background);
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    transition: background-color 0.3s ease, color 0.3s ease; /* transitions */
+}
+
+#darkModeBtn:hover {
+    background: var(--color-info);
+    color: var(--color-primary);
+}
+
+/* You can also add a style for a 'dark mode' class on the body that changes appropriate color variables */
+body.dark-mode {
+    --color-primary: #F1F1F1;
+    --color-background: #1c1d21ff;
+    --color-info: #1c1d21ff;
+    --color-link: #2a475e;
+    --color-link-hover: #FFD700;
+    --color-link-focus: #FF4500;
+    --color-link-visited: #fe7c7c;
+}
