@@ -14,7 +14,7 @@
     <header>
       <div id="content">
         <a id="favicon">
-          <img class ="fave" src="images/favicon-32x32.png" alt="favicon">
+          <img class ="fave" src="images/ME.webp" alt="favicon">
         </a>
         <nav class = "navigation">
           <button id="menu" aria-label="Navigation Menu"></button>
@@ -31,7 +31,13 @@
     <main class="home-grid">
       <h2>WDD 230: Web Frontend Development</h2>
       <section class="card">
-        <img class="me_tile" src="images/ME.jpg" alt="me tile">
+        <div class="overlay">
+          <picture class="hero">
+            <source srcset="images/hero-small.webp" media="(max-width: 400px)">
+            <source srcset="images/hero-large.webp" media="(max-width: 960px)">
+            <img src="images/hero-slc.jpg" alt="Salt Lake Temple">
+          </picture>
+        </div>
           <h3>Learning Activities:</h3>
           <ol>
             <li>W1 This page</li>
