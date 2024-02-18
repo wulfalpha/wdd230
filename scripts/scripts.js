@@ -24,24 +24,3 @@ document.addEventListener('DOMContentLoaded', () => {
         pTag.innerHTML = pTag.innerHTML.replace('[visits]', visits);
     }
 });
-// Weather.gov API endpoint
-const API_URL = 'https://api.weather.gov/gridpoints/SLC/101,158/forecast';
-
-fetch(API_URL)
-    .then(response => response.json())
-    .then(data => {
-        const firstPeriod = data.properties.periods[0];
-        const forecast = firstPeriod.detailedForecast;
-        const temp = firstPeriod.temperature;
-        // Extract number from windSpeed string like "7 mph"
-        const windSpeed = parseInt(firstPeriod.windSpeed.split(' ')[0]);
-
-        const windchill = calculateWindChill(temp, windSpeed);
-
-        // Update forecast and windchill elements
-        document.getElementById('forecast').textContent = `Forecast: ${forecast}`;
-        document.getElementById('windchill').textContent = `Wind Chill: ${windchill.toFixed(2)}°F`;
-    })
-    .catch(error => {
-        console.error('Error:', error);
-    });

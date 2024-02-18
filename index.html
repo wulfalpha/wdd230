@@ -35,10 +35,9 @@
       <section class="card">
         <div class="overlay">
           <picture class="hero">
-            <source srcset="images/6hero-small.webp" media="(max-width: 400px)">
-            <source srcset="images/6hero-medium.webp" media="(max-width: 720px)">
-            <source srcset="images/6hero-large.webp" media="(max-width: 960px)">
-            <img src="images/6hero.webp" alt="Salt Lake Temple">
+            <source srcset="images/hero-small.webp" media="(max-width: 400px)">
+            <source srcset="images/hero-large.webp" media="(max-width: 960px)">
+            <img src="images/hero-slc.jpg" alt="Salt Lake Temple">
           </picture>
         </div>
           <h3>Learning Activities:</h3>
@@ -59,8 +58,7 @@
       <section class="card">
         <h3>Information:</h3>
         <p>Weather: </p>
-        <p id="forcast"></p>
-        <p id="windchill"></p>
+        <a class="weatherwidget-io" href="https://forecast7.com/en/40d38n111d80/american-fork/?unit=us" data-label_1="AMERICAN FORK" data-label_2="WEATHER" data-theme="dark" >AMERICAN FORK WEATHER</a>
         <p>Visits: [visits]</p>
       </section>
       <section class="map">
@@ -95,6 +93,5 @@
       </section>
     </footer>
     <script src="scripts/scripts.js"></script>
-    <script src="scripts/windchill.js"></script>
   </body>
 </html>

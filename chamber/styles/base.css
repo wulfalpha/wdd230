@@ -34,6 +34,18 @@
 #hero {
     position: relative;
 }
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    width: 100%;
+    margin: auto;
+}
+.overlay {
+    width: 100%;
+}
+.hero {
+    width: 100%;
+    height: auto;
+}
 body {
     font-family: 'Sansita', sans-serif;
     color: var(--color-primary);
