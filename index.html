@@ -2,10 +2,10 @@
 <html lang="en-US">
   <head>
     <meta charset="utf-8">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
     <title>Andrew Davidson - WDD 230 - Web Frontend Development</title>
     <link href="https://fonts.googleapis.com/css2?family=Sansita:wght@700&display=swap" rel="stylesheet">
     <link type="text/css" rel="stylesheet" href="styles/style.css">
+    <link rel="icon" href="images/favicon.ico" type="image/webp">
     <meta name="author" content="Andrew Davidson">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content=" WDD 230 - Andrew Davidson - Course assignment portal">
@@ -13,11 +13,13 @@
   <body>
     <header>
       <div id="content">
-        <a id="favicon">
-          <img class ="fave" src="images/ME.webp" alt="favicon">
+        <a id="me-tile" class="centered-flexbox">
+          <img class ="fave" src="images/ME.webp" alt="Me">
         </a>
         <nav class = "navigation">
-          <button id="menu" aria-label="Navigation Menu"></button>
+          <button id="menu" aria-label="Navigation Menu">
+            <span class = "visually-hidden">Open Navigation Menu</span>
+          </button>
           <ul>
             <li><a href="index.html">Home</a></li>
             <li><a href="about.html">About</a></li>
@@ -25,7 +27,7 @@
             <li><a href="contact.html">Contact</a></li>
           </ul>
         </nav>
-        <h1>Andrew Davidson</h1>
+        <h1 class="centered-flexbox">Andrew Davidson</h1>
       </div>
     </header>
     <main class="home-grid">
@@ -33,9 +35,10 @@
       <section class="card">
         <div class="overlay">
           <picture class="hero">
-            <source srcset="images/hero-small.webp" media="(max-width: 400px)">
-            <source srcset="images/hero-large.webp" media="(max-width: 960px)">
-            <img src="images/hero-slc.jpg" alt="Salt Lake Temple">
+            <source srcset="images/6hero-small.webp" media="(max-width: 400px)">
+            <source srcset="images/6hero-medium.webp" media="(max-width: 720px)">
+            <source srcset="images/6hero-large.webp" media="(max-width: 960px)">
+            <img src="images/6hero.webp" alt="Salt Lake Temple">
           </picture>
         </div>
           <h3>Learning Activities:</h3>
@@ -56,7 +59,8 @@
       <section class="card">
         <h3>Information:</h3>
         <p>Weather: </p>
-        <a class="weatherwidget-io" href="https://forecast7.com/en/40d38n111d80/american-fork/?unit=us" data-label_1="AMERICAN FORK" data-label_2="WEATHER" data-theme="dark" >AMERICAN FORK WEATHER</a>
+        <p id="forcast"></p>
+        <p id="windchill"></p>
         <p>Visits: [visits]</p>
       </section>
       <section class="map">
@@ -71,15 +75,15 @@
         <p>United States:</p>
         <img class="flag" src="images/oldglory.png" alt="US Flag">
       </section>
-      <section class="social">
+      <section class="social centered-flexbox">
           <a href="https://www.facebook.com" target="_blank">
-              <img src="images/facebook.png" alt="fb icon">
+              <img src="images/facebook.png" alt="Facebook icon">
           </a>
         <a href="https://www.twitter.com" target="_blank">
-          <img src="images/twitter.png" alt="twitter icon">
+          <img src="images/twitter.png" alt="Twitter/X icon">
         </a>
         <a href="https://www.instagram.com" target="_blank">
-          <img src="images/instagram.png" alt="instagram icon">
+          <img src="images/instagram.png" alt="Instagram icon">
         </a>
       </section>
       <section id="validate">
@@ -91,5 +95,6 @@
       </section>
     </footer>
     <script src="scripts/scripts.js"></script>
+    <script src="scripts/windchill.js"></script>
   </body>
 </html>

@@ -1,22 +1,93 @@
 :root {
-    --color-primary: #F1F1F1; /* A very light gray to enhance the contrast. */
-    --color-active: #FFD700; /* A golden color for highlights. */
-    --color-info: #1f4451; /* A bright sky blue for informational elements. */
-    --color-warning: #FF4500; /* Brighter color for warning messages. */
-    --color-background: #1c1d21ff; /* The dark smoke background color you specified. */
-    --color-nav-hover: #36454f; /* The color of navigation items on hover. */
-    --color-link: #FAB1A0;  /* Since you're using a dark theme */
+    /* Light Colors */
+    --color-primary: #F1F1F1;    /* A very light gray to enhance the contrast. */
+    --color-active: #FFD700;     /* A golden color for highlights. */
+    --color-link: #FAB1A0;       /* Since you're using a dark theme */
     --color-link-hover: #FF7F50; /* A coral color for link hover */
     --color-link-focus: #BDB76B; /* A dark khaki color for link focus */
-    --color-link-visited: #fe7c7c; /* A blue violet color for visited link */
+    --color-link-visited: #FE7C7C; /* A blue violet color for visited link */
+
+    /* Dark Colors */
+    --color-info: #1F4451;         /* A bright sky blue for informational elements. */
+    --color-warning: #FF4500;      /* Brighter color for warning messages. */
+    --color-background: #1C1D21FF; /* The dark smoke background color you specified. */
+    --color-nav-hover: #36454F;    /* The color of navigation items on hover. */
+}
+
+/* Extracted similar style into a class */
+.centered-flexbox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.cta-button {
+    /* previous styles */
+    transition: background-color 0.3s ease, color 0.3s ease; /* transitions */
+}
+.cta-button:hover {
+    background: rgba(255,255,255,0.5); // changes on hover
+color: black; // changes on hover
+    /* Add the necessary hover effects */
+}
+
+/* Navigation Anchor Linked Styles */
+nav a {
+    display: block;
+    color: var(--color-primary);
+    text-align: center;
+    padding: 1rem;
+    text-decoration: none;
+}
+nav a:hover {
+    background-color: var(--color-background);
+    color: white;
+}
+.active {
+    color: var(--color-active);
+}
+ul .active::before {
+    content: "🕹️";  /* Just a way finding symbol for the user */
+}
+@media screen and (max-width: 960px) {
+    nav a:hover {
+        background-color: var(--color-nav-hover);
+    }
 }
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
+#content {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.home-grid {
+    display: grid;
+    gap: 20px;
+}
+
+.weatherwidget-io {
+    margin: 20px 0;
+    text-align: center;
+}
+
+#rights {
+    background: var(--color-background);
+    color: var(--color-link);
+    padding: 20px;
+    text-align: center;
+}
+
+.flag {
+    display: block;
+    margin: 10px auto;
+    max-width: 100%;
+}
 body {
-    font-family: 'Sansita', sans-serif;
+    font-family: 'Sansita', Arial, sans-serif; /* Added a backup font */
     color: var(--color-primary);
     background-color: var(--color-background);
 }
@@ -65,8 +136,20 @@ ol > li::marker {
 }
 .card {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-    max-width: 400px;
+    width: 100%;
     margin: auto;
+}
+.overlay {
+    width: 100%;
+}
+.hero {
+    width: 100%;
+    height: auto;
+}
+#me-tile .fave {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .card img {
     width: 100%;
@@ -95,10 +178,6 @@ footer {
 .jigsaw {
     border:0;width:88px;height:31px
 }
-nav a:hover {
-    background-color: var(--color-background);
-    color: var(--color-primary)
-}
 /* small view navigation */
 #menu {
     font-size: 1.5rem;
@@ -113,7 +192,7 @@ nav a:hover {
     display: block;
 }
 .active::before {
-    content: "🕹️";  /* just a wayfinding symbol for the user */
+    content: "🕹️";  /* just a way finding symbol for the user */
 }
 #menu::before {
     content: "🍔";
@@ -126,7 +205,7 @@ nav a:hover {
 }
 .overlay .hero .img {
     width: 100%;
-    height: 100%;
+    height: auto;
     object-fit: cover;
 }
 .overlay .hero {
@@ -138,11 +217,6 @@ nav a:hover {
     height: auto;
     width: 100%; /* full width */
     z-index: -1; /* to place behind the content */
-}
-@media screen and (max-width: 960px) {
-    .overlay .hero {
-        width: 400px; /* Override width for mobile view */
-    }
 }
 #menu.open::before {
     content: "❎";
@@ -171,21 +245,6 @@ nav {
 }
 nav ul {
     list-style-type: none;
-}
-nav a {
-    display: block;
-    color: var(--color-primary);
-    text-align: center;
-    padding: 1rem;
-    text-decoration: none;
-}
-
-nav a:hover {
-    background-color : var(--color-nav-hover);
-    color : white;
-}
-.active {
-    color: var(--color-active);
 }
 /* Larger Views ******************************/
 @media (min-width: 640px) {
