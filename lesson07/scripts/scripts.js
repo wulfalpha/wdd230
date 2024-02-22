@@ -8,8 +8,6 @@ hamButton.addEventListener('click', () => {
 
 !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src='https://weatherwidget.io/js/widget.min.js';fjs.parentNode.insertBefore(js,fjs);}}(document,'script','weatherwidget-io-js');
 
-// Assuming you have a way to calculate or get site visits
-let visits = 123; // Placeholder for visits
 
 document.addEventListener('DOMContentLoaded', () => {
     const rightsSection = document.querySelector("#rights");
@@ -26,7 +24,8 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 const input = document.querySelector('#favchap')
-const button = document.querySelector('button')
+const button = document.querySelector('#submit')
+console.log(button);
 const list = document.querySelector('#list') // Changed this line
 let chaptersArray = getChapterList() || [];
 
@@ -50,10 +49,16 @@ function displayList(item) {
     console.log('I like to copy code instead of typing it out myself and trying to understand it.');
 }
 function setChapterList() {
-    localStorage.setItem('myFavBOMList', JSON.stringify(chaptersArray));
+    try {
+        const serializedData = JSON.stringify(chaptersArray);
+        localStorage.setItem('myFavBOMList', serializedData);
+    } catch (e) {
+        console.log('Error saving to localStorage', e);
+    }
 }
 function getChapterList() {
-    return JSON.parse(localStorage.getItem('myFavBOMList'));
+    const chapters = localStorage.getItem('myFavBOMList');
+    return chapters ? JSON.parse(chapters) : [];
 }
 function deleteChapter(chapter) {
     chapter = chapter.slice(0, chapter.length - 1);
