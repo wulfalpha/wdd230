@@ -71,6 +71,30 @@ body {
     color: var(--color-primary);
 }
 
+@media only screen and (min-width: 600px) {
+    #sidebar {
+        grid-area: sidebar;
+    }
+}
+#sidebar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.home-grid {
+    display: grid;
+    grid-template-areas:
+        "sidebar"
+        "gallery";
+}
+
+@media only screen and (min-width: 600px) {
+    .home-grid {
+        grid-template-columns: 1fr 3fr; /* This will distribute the space into 1 part for sidebar and 3 parts for gallery */
+        grid-template-areas:
+            "sidebar gallery"; /* This will put sidebar and gallery side by side */
+    }
+}
 /* You can also add a style for a 'dark mode' class on the body that changes appropriate color variables */
 body.dark-mode {
     --color-primary: #F1F1F1;

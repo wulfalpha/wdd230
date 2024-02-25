@@ -66,3 +66,32 @@ fetch(API_URL)
     .catch(error => {
         console.error('Error:', error);
     });
+let galleryImageElement = document.querySelector('#gallery .poi img');
+let galleryImageIndex = 0;
+let galleryImages = ["poi_mall.webp", "poi_1.webp", "poi_convention.webp", "poi_frontrunner.webp", "poi_library.webp", "poi_mainstreet.webp", "poi_museum.webp"] // Add all gallery image file names here
+
+setInterval(() => {
+    galleryImageIndex = (galleryImageIndex + 1) % galleryImages.length;  // Increment the index and wrap around to 0 if it's larger than image count
+    galleryImageElement.src = "images/" + galleryImages[galleryImageIndex];  // Change image source
+}, 2000);
+window.onload = function() {
+    let visitMessageElement = document.querySelector('.visit');
+
+    let lastVisitTime = localStorage.getItem('lastVisitTime');
+    let currentTime = new Date().getTime();
+
+    if (lastVisitTime === null) {
+        visitMessageElement.textContent = 'Welcome! Let us know if you have any questions.';
+    } else {
+        let timeDifference = ((currentTime - lastVisitTime) / (1000 * 60 * 60 * 24)); // In days
+
+        if (timeDifference < 1) {
+            visitMessageElement.textContent = 'Back so soon! Awesome!';
+        } else {
+            let days = Math.round(timeDifference)
+            visitMessageElement.textContent = `Welcome back! You last visited ${days} day(s) ago.`;
+        }
+    }
+
+    localStorage.setItem('lastVisitTime', currentTime);
+};
