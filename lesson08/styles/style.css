@@ -50,6 +50,20 @@ table {
     box-shadow: 0 0 10px var(--color-info);
     border-collapse: collapse;
 }
+/* Zebra striping the table */
+.table tr:nth-child(even) {
+    background-color: var(--color-background);  /* Replace this with your choice of color for the even rows */
+}
+
+.table tr:nth-child(odd) {
+    background-color: var(--color-info);  /* Replace this with your choice of color for the odd rows */
+}
+
+/* Enhance table cell borders */
+.table td, .table th {
+    border: 1px solid rgba(255,255,255,0.2);   /* Choose a darker shade of white for the border */
+    padding: 10px;
+}
 * {
     margin: 0;
     padding: 0;
