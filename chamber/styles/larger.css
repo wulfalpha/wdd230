@@ -1,3 +1,15 @@
+:root {
+    --color-primary: #F1F1F1; /* A very light gray to enhance the contrast. */
+    --color-active: #FFD700; /* A golden color for highlights. */
+    --color-info: #1f4451; /* A bright sky blue for informational elements. */
+    --color-warning: #FF4500; /* Brighter color for warning messages. */
+    --color-background: #1c1d21ff; /* The dark smoke background color you specified. */
+    --color-nav-hover: #36454f; /* The color of navigation items on hover. */
+    --color-link: #FAB1A0;  /* Since you're using a dark theme */
+    --color-link-hover: #FF7F50; /* A coral color for link hover */
+    --color-link-focus: #BDB76B; /* A dark khaki color for link focus */
+    --color-link-visited: #fe7c7c; /* A blue violet color for visited link */
+}
 body {
     font-family: 'Sansita', sans-serif;
     color: var(--color-primary);
@@ -10,6 +22,7 @@ body {
     height: 500px;  /* Adjust based on your preference */
 }
 .board {
+    display: flex;
     justify-content: center;
     align-items: center;
     margin: 0 auto;
@@ -107,8 +120,9 @@ form, #membershipBenefits {
 @media (min-width: 640px) {
     #membershipBenefits {
         display: block;
+    }
     /* Hide menu button on larger screens */
-    #menu {
+    #ham-menu {
         display: none;
     }
     nav ul {
@@ -117,4 +131,4 @@ form, #membershipBenefits {
     nav ul li {
         flex: 1 1 100%;
     }
-}}
+}
