@@ -89,7 +89,24 @@ nav a:hover {
     color: var(--color-primary)
 }
 
+form, #membershipBenefits {
+    width: 75%;
+}
+
+.form-grid {
+    display: flex;
+    justify-content: space-between;
+}
+
+#membershipBenefits {
+    display: none;
+    margin-left: 2em;
+    margin-top: 2em;
+}
+
 @media (min-width: 640px) {
+    #membershipBenefits {
+        display: block;
     /* Hide menu button on larger screens */
     #menu {
         display: none;
@@ -100,4 +117,4 @@ nav a:hover {
     nav ul li {
         flex: 1 1 100%;
     }
-}
+}}

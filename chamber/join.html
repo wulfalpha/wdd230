@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Utah Valley Chamber of Commerce</title>
+    <link href="https://fonts.googleapis.com/css2?family=Sansita:wght@700&display=swap" rel="stylesheet">
+    <meta property="OG:title" content="WDD 230 Chamber of Commerce assignment">
+    <meta property="OG:image" content="https://wulfalpha.github.io/wdd230/chamber/images/favicon.ico">
+    <meta property="OG:url" content="https://wulfalpha.github.io/wdd230/chamber/">
+    <link type="text/css" rel="stylesheet" href="styles/base.css">
+    <link type="text/css" rel="stylesheet" href="styles/medium.css">
+    <link type="text/css" rel="stylesheet" href="styles/larger.css">
+    <link rel="icon" href="images/favicon.ico" type="image/webp">
+    <meta name="author" content="Andrew Davidson">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content=" WDD 230 Chamber of Commerce assignment.">
+</head>
+<body>
+<header>
+    <div id="content">
+        <a id="favicon">
+            <img class ="fave" src="images/favicon-32x32.png" alt="favicon">
+        </a>
+        <nav class = "navigation">
+            <button id="menu" aria-label="Navigation Menu"></button>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="../index.html">WDD 230 Class Home page</a></li>
+                <li><a href="discover.html">Discover</a> </li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <button id="darkModeBtn">Dark Mode</button>
+        </nav>
+        <h1>Join the Chamber of Commerce</h1>
+    </div>
+</header>
+<main class="form-grid">
+    <form method="get" action="thanks.html" class="joinForm1">
+        <fieldset>
+            <legend>Applicant Information</legend>
+            <label>First Name* <input type="text" name="fname" required></label>
+            <label>Last Name* <input type="text" name="lname" required></label>
+            <label>Title* <input type="text" name="title" required></label>
+            <label>Company Name* <input type="text" name="company" required></label>
+            <label>Phone* <input type="tel" name="phone" placeholder="1235551234" required></label>
+            <label>Email* <input type="email" name="email" placeholder="someone@gmail.com" required></label>
+        </fieldset>
+        <fieldset>
+            <legend>Describe your business</legend>
+            <label>Business Description:
+                <textarea rows="4" cols="50" name="description" placeholder="description"></textarea>
+            </label>
+            <label><input type="hidden" name="visit" hidden></label>
+        </fieldset>
+        <fieldset>
+            <label>Membership Type:
+                <select name="membership">
+                    <option value="">Please Select 🔻</option>
+                    <option value="np">Non Profit</option>
+                    <option value="bronze">Bronze</option>
+                    <option value="silver">Silver</option>
+                    <option value="gold">Gold</option>
+                </select>
+            </label>
+        </fieldset>
+
+        <button type="submit">Join the Chamber</button>
+    </form>
+    <section id="membershipBenefits">
+        <h2>Membership Benefits</h2>
+        <p>These are just some of the amazing benifits you could receive by joining the Utah Valley Chamber of Commerce.</p>
+
+        <div class="benefit np">
+            <h3>Non Profit</h3>
+            <p>A plan for Non Profit organizations. Allows them to get many of the benefits they need for free.
+            Networking and Job Fair opportunities are just some examples.</p>
+        </div>
+        <div class="benefit bronze">
+            <h3>Bronze</h3>
+            <p>An affordable Tier for small businesses. Get the benifits of networking, job fairs, and more.</p>
+        </div>
+        <div class="benefit silver">
+            <h3>Silver</h3>
+            <p>Mid-level Tier for small to medium businesses. Get access to Job Fairs, a liason with the local school districts and more.</p>
+        </div>
+        <div class="benefit gold">
+            <h3>Gold</h3>
+            <p>Highest Tier. For large businesses or businesses looking for more exposure. Get access to all of the above and in addition to our heartfelt thanks, a spotlight on all our web pages.</p>
+        </div>
+    </section>
+
+</main>
+<footer>
+    <section id="rights">
+        <p>WulfAlpha &copy; 2024 - Andrew Davidson</p>
+        <p>WDD 230 Chamber Project Site</p>
+        <p>Date and Time: [now]</p>
+        <p>Last Modified: <span data-modified-date></span></p>
+        <p>United States:</p>
+        <img class="flag" src="images/oldglory.png" alt="US Flag">
+    </section>
+    <section class="social">
+    </section>
+    <section id="validate">
+        <p>
+            <a href="https://jigsaw.w3.org/css-validator/check/referer">
+                <img class="jigsaw" src="https://jigsaw.w3.org/css-validator/images/vcss" alt="Valid CSS!">
+            </a>
+        </p>
+    </section>
+</footer>
+<script src="scripts/scripts.js"></script>
+</body>
+</html>

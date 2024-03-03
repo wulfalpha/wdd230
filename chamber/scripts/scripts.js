@@ -94,4 +94,6 @@ window.onload = function() {
     }
 
     localStorage.setItem('lastVisitTime', currentTime);
+    let visitField = document.querySelector('input[name="visit"]');
+    visitField.value = Date.now();
 };

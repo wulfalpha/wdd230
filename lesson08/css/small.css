@@ -4,7 +4,6 @@ html {-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%;}
 /*----------- apply a natural box layout model to all elements --------------*/
 * { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
 
-
 /*----------- BODY --------------*/
 body {
     font-size: 16px;
@@ -49,34 +48,34 @@ main {
     min-height: 20rem;
 }
 /*----------- Form Styling -----------*/
-.webForm1 fieldset {
+.joinForm1 fieldset {
     margin: 2rem 0;
     border: 1px solid #dddddd;
     border-radius: 6px;
     padding: 0.5rem 2%;
 }
-.webForm1 legend {
+.joinForm1 legend {
     color: #445ba9;
     padding: 0 0.5rem;
 }
-.webForm1 label {
+.joinForm1 label {
     display: block;
     padding-top: 1rem;
     color: #9c2c13;
     font-size: 0.9rem;
 }
-.webForm1 div {
+.joinForm1 div {
     padding-top: 1rem;
     color: #445ba9;
     font-size: 0.9rem;
 }
-.webForm1 input[type="text"],
-.webForm1 input[type="tel"],
-.webForm1 input[type="email"],
-.webForm1 input[type="url"],
-.webForm1 input[type="date"],
-.webForm1 select,
-.webForm1 input[type="number"] {
+.joinForm1 input[type="text"],
+.joinForm1 input[type="tel"],
+.joinForm1 input[type="email"],
+.joinForm1 input[type="url"],
+.joinForm1 input[type="date"],
+.joinForm1 select,
+.joinForm1 input[type="number"] {
     background-color: #eeeeee;
     display: block;
     border: solid 1px #9999;
@@ -87,12 +86,12 @@ main {
     max-width: 400px;
     appearance: none;
 }
-.webForm1 input[type="radio"],
-.webForm1 input[type="checkbox"] {
+.joinForm1 input[type="radio"],
+.joinForm1 input[type="checkbox"] {
     margin-right: 6px;
 }
 
-.webForm1 input[type="submit"] {
+.joinForm1 input[type="submit"] {
     border: none;
     background-image: radial-gradient(#445ba9, cornflowerblue);
     color: #ffffff;
@@ -104,11 +103,11 @@ main {
     box-shadow: 1px 1px 4px #333333;
 }
 
-.webForm1 input:required {
+.joinForm1 input:required {
     border-left: solid 8px orangered;
 }
 
-.webForm1 input:required:valid {
+.joinForm1 input:required:valid {
     border-left: solid 8px darkgreen;
 }
 
