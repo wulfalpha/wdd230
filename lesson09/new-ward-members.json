@@ -1,0 +1,95 @@
+{
+  "Cronkite": {
+    "dateMovedIn": "03/12/2020",
+    "numberOfPeople": 4,
+    "visitedByBishopric": true,
+    "familyMembers": {
+      "Walter": {
+        "name": "Walter Cronkite",
+        "gender": "Male",
+        "birthdate": "12/07/1994"
+      },
+      "Claire": {
+        "name": "Claire Cronkite",
+        "gender": "Female",
+        "birthdate": "06/11/1998"
+      },
+      "Sam": {
+        "name": "Samantha Cronkite",
+        "gender": "Female",
+        "birthdate": "09/05/2020"
+      },
+      "Will": {
+        "name": "William Cronkite",
+        "gender": "Male",
+        "birthdate": "08/22/2023"
+      }
+    }
+  },
+  "Wells": {
+    "dateMovedIn": "04/12/2022",
+    "numberOfPeople": 2,
+    "visitedByBishopric": true,
+    "familyMembers": {
+      "Herb": {
+        "name": "Herbert George Wells",
+        "gender": "Male",
+        "birthdate": "03/21/2000"
+      },
+      "Trisha": {
+        "name": "Tricia James Wells",
+        "gender": "Female",
+        "birthdate": "04/20/1999"
+      }
+    }
+  },
+  "Verne": {
+    "dateMovedIn": "3/6/1999",
+    "numberOfPeople": 6,
+    "visitedByBishopric": true,
+    "familyMembers": {
+      "Jules": {
+        "name": "Jules Lawrence Verne",
+        "gender": "Male",
+        "birthdate": "05/12/1988"
+      },
+      "Maria": {
+        "name": "Maria Sophia Verne",
+        "gender": "Female",
+        "birthdate": "04/11/1989"
+      },
+      "Sophie": {
+        "name": "Sophia Ann Verne",
+        "gender": "Female",
+        "birthdate": "12/01/2000"
+      },
+      "Effi": {
+        "name": "Persephone Ann Verne",
+        "gender": "Female",
+        "birthdate": "12/01/2000"
+      },
+      "Walter": {
+        "name": "Walter James Verne",
+        "gender": "Male",
+        "birthdate": "01/01/2011"
+      },
+      "Ike": {
+        "name": "Isaac Verne",
+        "gender": "Male",
+        "birthdate": "07/04/2014"
+      }
+    }
+  },
+  "Asimov": {
+    "dateMovedIn": "03/04/2024",
+    "numberOfPeople": 1,
+    "visitedByBishopric": false,
+    "familyMembers": {
+      "Isaac": {
+        "name": "Isaac Asimov",
+        "gender": "Male",
+        "birthdate": "01/04/2020"
+      }
+    }
+  }
+}
