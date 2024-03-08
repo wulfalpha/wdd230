@@ -1,0 +1,87 @@
+:root {
+    /* Light Colors */
+    --color-primary: #F1F1F1;    /* A very light gray to enhance the contrast. */
+    --color-active: #FFD700;     /* A golden color for highlights. */
+    --color-link: #FAB1A0;       /* Since you're using a dark theme */
+    --color-link-hover: #FF7F50; /* A coral color for link hover */
+    --color-link-focus: #BDB76B; /* A dark khaki color for link focus */
+    --color-link-visited: #FE7C7C; /* A blue violet color for visited link */
+
+    /* Dark Colors */
+    --color-info: #1F4451;         /* A bright sky blue for informational elements. */
+    --color-warning: #FF4500;      /* Brighter color for warning messages. */
+    --color-background: #1C1D21FF; /* The dark smoke background color you specified. */
+    --color-nav-hover: #36454F;    /* The color of navigation items on hover. */
+}
+
+/* Extracted similar style into a class */
+.centered-flexbox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+#content {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Grid */
+.home-grid {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: 1fr;
+}
+body {
+    font-family: 'Sansita', Arial, sans-serif; /* Added a backup font */
+    color: var(--color-primary);
+    background-color: var(--color-background);
+}
+/* Image Box */
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    width: 100%;
+    margin: auto;
+}
+.card img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;  /* This line will make sure images cover all available space but maintains its aspect ratio. */
+    margin-top: 10px;  /* Adjust as needed to create space at the top */
+    margin-bottom: 10px;  /* Adjust as needed to create space at the bottom */
+}
+footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* Add other necessary styling */
+}
+/* mobile **************************/
+header {
+    background-color: var(--color-info);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
+header,
+main {
+    max-width: 767px;
+    margin: 0 auto;
+}
+h1 {
+    font-size: 2rem;
+}
+/* Larger Views ******************************/
+@media (min-width: 640px) {
+    .home-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
