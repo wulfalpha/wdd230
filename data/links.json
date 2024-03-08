@@ -1,0 +1,84 @@
+{
+  "lessons": [
+    {
+      "lesson": "02",
+      "links": [
+        {
+          "url": "lesson02/design-principles.html",
+          "title": "Design Principles Document"
+        }
+      ]
+    },
+    {
+      "lesson": "03",
+      "links": [
+        {
+          "url": "lesson03/chamber-site-plan.html",
+          "title": "Chamber Site Plan"
+        }
+      ]
+    },
+    {
+      "lesson": "04",
+      "links": [
+        {
+          "url": "chamber/index.html",
+          "title": "Media Queries"
+        }
+      ]
+    },
+    {
+      "lesson": "05",
+      "links": [
+        {
+          "url": "lesson05/bom.html",
+          "title": "Book Of Mormon Chapter assignment"
+        }
+      ]
+    },
+    {
+      "lesson": "06",
+      "links": [
+        {
+          "url": "lesson06/responsive-images.html",
+          "title": "Media Queries"
+        }
+      ]
+    },
+    {
+      "lesson": "07",
+      "links": [
+        {
+          "url": "lesson07/bom.html",
+          "title": "Book of Mormon Revisited"
+        },
+        {
+          "url": "lesson07/lazyload.html",
+          "title": "Lazy Loading assignment"
+        }
+      ]
+    },
+    {
+      "lesson": "08",
+      "links": [
+        {
+          "url": "lesson08/index.html",
+          "title": "Web Forms"
+        },
+        {
+          "url": "lesson08/tablebuild.html",
+          "title": "Building Tables"
+        }
+      ]
+    },
+    {
+      "lesson": "09",
+      "links": [
+        {
+          "url": "lesson02/mediaquery.html",
+          "title": "Media Queries"
+        }
+      ]
+    }
+  ]
+}

@@ -33,3 +33,34 @@ document.addEventListener('DOMContentLoaded', () => {
         pTag.innerHTML = pTag.innerHTML.replace('[visits]', visits);
     }
 });
+
+const baseURL = "https://wulfalpha.github.io/wdd230/";
+const linksURL = "https://wulfalpha.github.io/wdd230/data/links.json";
+
+async function getLinks() {
+    const response = await fetch(linksURL);
+    const data = await response.json();
+    displayLinks(data);
+}
+
+function displayLinks(data) {
+    const linkListElement = document.querySelector('.card ol'); // Selecting the ol
+    let htmlString = ''; // Initializing an empty string
+
+    // Checking if the element exists before interacting with it
+    if (linkListElement) {
+        // Iterating through the lesson items
+        data.lessons.forEach((lesson, index) => {
+            // Iterating through the links in each lesson
+            lesson.links.forEach(link => {
+                // Week numbering starts from week 2, hence index+2
+                let liContent = `W${index+2} <a href="${baseURL}${link.url}">${link.title}</a>`;
+                htmlString += `<li>${liContent}</li>`;
+            });
+        });
+
+        linkListElement.innerHTML = htmlString; // Updating the ol element's inner HTML
+    }
+}
+
+getLinks();
