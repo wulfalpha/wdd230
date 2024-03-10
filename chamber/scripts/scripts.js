@@ -1,49 +1,74 @@
-const hamButton = document.querySelector('#menu');
-const navigation = document.querySelector('.navigation');
-const darkmodeBtn = document.querySelector('#darkModeBtn');
-const ctaButton = document.querySelector('.cta-button');
+// Simplified query selector <-- ADD THIS
+function select(selector) {
+    return document.querySelector(selector);
+}
 
+// Simplified event attaching <-- ADD THIS
+function on(element, event, handler) {
+    element.addEventListener(event, handler);
+}
 
-// Event listener for hamburger menu
-hamButton.addEventListener('click', () => {
-    navigation.classList.toggle('open');
-    hamButton.classList.toggle('open');
-});
+// Event handlers for specific elements <-- ADD THIS
+const handlers = {
+    '#ham-menu': () => {
+        select('.navigation').classList.toggle('open');
+        select('#ham-menu').classList.toggle('open');
+    },
+    '#darkModeBtn': () => {
+        document.body.classList.toggle('dark-mode');
+    },
+    '.cta-button': () => joinMember(),
+    '.gridify #grid': () => displayMembers('grid'),
+    '.gridify #list': () => displayMembers('block'),
+};
 
-// Event listener for 'Dark Mode' button
-darkmodeBtn.addEventListener('click', () => {
-    document.body.classList.toggle('dark-mode')
-});
+// Apply event handlers <-- ADD THIS
+function applyHandlers() {
+    Object.entries(handlers).forEach(([selector, handler]) => {
+        on(select(selector), 'click', handler);
+    });
+}
 
-// Event listener for 'Call To Action' button
-ctaButton.addEventListener('click', () => {
-    // Handle click event for 'Join chamber'
-    joinMember(); // Assuming you have a function for this action
-});
+// Function for member joining <-- ADD THIS
+function joinMember() {
+    console.log("Joining member...");
+}
 
-!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src='https://weatherwidget.io/js/widget.min.js';fjs.parentNode.insertBefore(js,fjs);}}(document,'script','weatherwidget-io-js');
+// Function for displaying members <-- ADD THIS
+function displayMembers(displayType) {
+    const membersSection = select('.members');
+    membersSection.style.display = displayType;
+    Array.from(membersSection.children).forEach(child => {
+        child.style.width = displayType === 'grid' ? "auto" : "100%";
+
+        // For grid layout, define columns
+        if(displayType === "grid") {
+            membersSection.style.gridTemplateColumns = "repeat(3, 1fr)";
+        }
+    });
+}
+
+// Call applyHandlers function after ensuring the DOM is completely loaded <-- ADD THIS
+document.addEventListener("DOMContentLoaded", applyHandlers);
+
+!function(d,s,id){let js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src='https://weatherwidget.io/js/widget.min.js';fjs.parentNode.insertBefore(js,fjs);}}(document,'script','weatherwidget-io-js');
 
 // Assuming you have a way to calculate or get site visits
 let visits = 123; // Placeholder for visits
 
 document.addEventListener('DOMContentLoaded', () => {
-    const rightsSection = document.querySelector("#rights");
+    const rightsSection = select("#rights");
     const paragraphs = rightsSection.querySelectorAll("p");
     const now = new Date();
     const dateString = now.toLocaleString();
     paragraphs[1].textContent = `Date and Time: ${dateString}`;
-    document.querySelector("[data-modified-date]").textContent = document.lastModified;
+    select("[data-modified-date]").textContent = document.lastModified;
 
-    let pTag = document.querySelector('.card p'); // More precise selection of p tag
+    let pTag = select('.card p'); // More precise selection of p tag
     if(pTag && visits) {
         pTag.innerHTML = pTag.innerHTML.replace('[visits]', visits);
     }
 });
-
-function joinMember() {
-    // Logic for joining member goes here
-    console.log("Joining member...");
-}
 
 // Weather.gov API endpoint
 const API_URL = 'https://api.weather.gov/gridpoints/SLC/101,158/forecast';
@@ -60,13 +85,14 @@ fetch(API_URL)
         const windchill = calculateWindChill(temp, windSpeed);
 
         // Update forecast and windchill elements
-        document.getElementById('forecast').textContent = `Forecast: ${forecast}`;
-        document.getElementById('windchill').textContent = `Wind Chill: ${windchill.toFixed(2)}°F`;
+        select('#forecast').textContent = `Forecast: ${forecast}`;
+        select('#windchill').textContent = `Wind Chill: ${windchill.toFixed(2)}°F`;
     })
     .catch(error => {
         console.error('Error:', error);
     });
-let galleryImageElement = document.querySelector('#gallery .poi img');
+
+let galleryImageElement = select('#gallery .poi img');
 let galleryImageIndex = 0;
 let galleryImages = ["poi_mall.webp", "poi_1.webp", "poi_convention.webp", "poi_frontrunner.webp", "poi_library.webp", "poi_mainstreet.webp", "poi_museum.webp"] // Add all gallery image file names here
 
@@ -74,8 +100,9 @@ setInterval(() => {
     galleryImageIndex = (galleryImageIndex + 1) % galleryImages.length;  // Increment the index and wrap around to 0 if it's larger than image count
     galleryImageElement.src = "images/" + galleryImages[galleryImageIndex];  // Change image source
 }, 2000);
+
 window.onload = function() {
-    let visitMessageElement = document.querySelector('.visit');
+    let visitMessageElement = select('.visit');
 
     let lastVisitTime = localStorage.getItem('lastVisitTime');
     let currentTime = new Date().getTime();
@@ -94,6 +121,24 @@ window.onload = function() {
     }
 
     localStorage.setItem('lastVisitTime', currentTime);
-    let visitField = document.querySelector('input[name="visit"]');
+    let visitField = select('input[name="visit"]');
     visitField.value = Date.now();
 };
+
+// Fetch members.json data
+fetch("data/members.json")
+    .then(response => response.json())
+    .then(data => {
+        const membersSection = select('.members');
+        let membersData = "";
+        for (let member in data.Members) {
+            membersData += `
+                <div class="member">
+                    <h2>${data.Members[member].name}</h2>
+                    <p>${data.Members[member].position}</p>
+                    <a href="mailto:${data.Members[member].email}">${data.Members[member].email}</a>
+                </div>
+            `
+        }
+        membersSection.innerHTML = membersData;
+    });

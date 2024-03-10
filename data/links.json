@@ -75,8 +75,16 @@
       "lesson": "09",
       "links": [
         {
-          "url": "lesson02/mediaquery.html",
-          "title": "Media Queries"
+          "url": "lesson09/prophets.html",
+          "title": "Prophets page"
+        },
+        {
+          "url": "lesson9/new-ward-members.json",
+          "title": "ward members json file"
+        },
+        {
+          "url": "chamber/directory.html",
+          "title": "Chamber Directory"
         }
       ]
     }

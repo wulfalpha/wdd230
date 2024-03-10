@@ -1,0 +1,19 @@
+{
+  "Members": {
+    "President": {
+      "name": "U. N. Owen",
+      "position": "President",
+      "email": "pres@chamber.org"
+    },
+    "VicePresident": {
+      "name": "N O Body",
+      "position": "vice president",
+      "email": "vp@chamber.org"
+    },
+    "WebDeveloper": {
+      "name": "Andrew Davidson",
+      "position": "Lead Web Developer",
+      "email": "andrew.davidson@wulfalpha.com"
+    }
+  }
+}

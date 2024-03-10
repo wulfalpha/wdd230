@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en-US" xmlns="http://www.w3.org/1999/html">
+<html lang="en-US">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -37,40 +37,11 @@
     </div>
 </header>
 <main class="home-grid">
-    <div id="sidebar">
-        <section class="motd">
-            <p class="visit"></p>
-        </section>
-        <section class="demographics">
-            <h2>Demographics</h2>
-        </section>
-        <section class="card events">
-            <h2>Events</h2>
-            <ul class="events">Open house for new Recreation Center!</ul>
-            <ul class="events">Employment Workshop @ Event Center</ul>
-            <ul class="events">Carreer day workshop @ Provo Library </ul>
-        </section>
-        <section class="card data">
-            <h2>Statistics</h2>
-            <div class="map">
-                <div class="board">
-                    <ol>
-                        <li><a href="#">Link 1</a></li>
-                        <li><a href="#">Link 2</a></li>
-                        <li><a href="#">Link 3</a></li>
-                    </ol>
-                </div>
-            </div>
-        </section>
+    <div class="gridify">
+        <button id="grid">⏹️Grid</button>
+        <button id="list">📄List</button>
     </div>
-    <div id="gallery">
-        <picture class="poi">
-            <source srcset="images/poi.webp" media="(min-width: 768px)">
-            <source srcset="images/poi-mobile.webp" media="(max-width: 767px)">
-            <img class="poi" src="images/poi_1.webp" alt="Point of Interest" loading="lazy">
-        </picture>
-    </div>
-
+    <section class="members"></section>
 </main>
 <footer>
     <section id="rights">
