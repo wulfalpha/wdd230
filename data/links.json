@@ -87,6 +87,15 @@
           "title": "Chamber Directory"
         }
       ]
+    },
+    {
+      "lesson": "09",
+      "links": [
+        {
+          "url": "lesson10/weather.html",
+          "title": "Weather assignment"
+        }
+      ]
     }
   ]
 }
