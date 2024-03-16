@@ -37,6 +37,10 @@
     </div>
 </header>
 <main class="home-grid">
+    <div id="event-banner" class="event-banner" style="display: none;">
+        <p>Join us at the Chamber Of Commerce Meet And Greet! Wednesday at 7:00 p.m.</p>
+        <span id="banner-close" class="banner-close">&times;</span>
+    </div>
     <h2>Chamber of Commerce</h2>
     <section class="card">
         <a id="hero">
@@ -54,10 +58,12 @@
     <section class = "card">
         <h2>Current Events</h2>
     </section>
-    <section class="card">
+    <section class="card weather-forecast">
         <h3>Information:</h3>
-        <p>Weather: </p>
-        <a class="weatherwidget-io" href="https://forecast7.com/en/40d38n111d80/american-fork/?unit=us" data-label_1="AMERICAN FORK" data-label_2="WEATHER" data-theme="dark" >AMERICAN FORK WEATHER</a>
+        <h2>3-Day Weather Forecast</h2>
+        <div id="day1" class="forecast"></div>
+        <div id="day2" class="forecast"></div>
+        <div id="day3" class="forecast"></div>
         <p class="windchill"></p>
         <p>Visits: [visits]</p>
     </section>

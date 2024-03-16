@@ -161,6 +161,9 @@ body {
 #ham-menu.open::before {
     content: "❎";
 }
+.banner-close {
+    content: "❎";
+ }
 
 #sidebar {
     display: flex;

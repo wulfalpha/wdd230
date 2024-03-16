@@ -8,7 +8,13 @@ function on(element, event, handler) {
     element.addEventListener(event, handler);
 }
 
-// Event handlers for specific elements <-- ADD THIS
+// Apply event handlers
+function applyHandlers() {
+    Object.entries(handlers).forEach(([selector, handler]) => {
+        on(select(selector), 'click', handler);
+    });
+}
+
 const handlers = {
     '#ham-menu': () => {
         select('.navigation').classList.toggle('open');
@@ -20,14 +26,10 @@ const handlers = {
     '.cta-button': () => joinMember(),
     '.gridify #grid': () => displayMembers('grid'),
     '.gridify #list': () => displayMembers('block'),
+    '#banner-close': () => {
+        select('#event-banner').style.display = 'none';
+    },
 };
-
-// Apply event handlers <-- ADD THIS
-function applyHandlers() {
-    Object.entries(handlers).forEach(([selector, handler]) => {
-        on(select(selector), 'click', handler);
-    });
-}
 
 // Function for member joining <-- ADD THIS
 function joinMember() {
@@ -142,3 +144,52 @@ fetch("data/members.json")
         }
         membersSection.innerHTML = membersData;
     });
+
+async function getWeatherData() {
+    const url = 'https://api.openweathermap.org/data/2.5/forecast?lat=40.377937&lon=-111.803055&appid=5a0d88a901126cc81d618d978ab200cb&units=imperial';
+    const response = await fetch(url);
+    const data = await response.json();
+    displayResults(data);
+}
+getWeatherData();
+function displayResults(data){
+    // Current weather
+    const currentTemp = document.querySelector('#current-temp');
+    const weatherIcon = document.querySelector('#weather-icon');
+    const captionDesc = document.querySelector('figcaption');
+    currentTemp.textContent = data.current.temp.toFixed(2);
+    weatherIcon.src = "https:" + data.current.condition.icon;
+    captionDesc.textContent = data.current.condition.text;
+
+    // Day 1
+    const day1 = document.querySelector('#day1');
+    displayForecast(data.forecast.forecastday[0], day1);
+
+    // Day 2
+    const day2 = document.querySelector('#day2');
+    displayForecast(data.forecast.forecastday[1], day2);
+
+    // Day 3
+    const day3 = document.querySelector('#day3');
+    displayForecast(data.forecast.forecastday[2], day3);
+}
+
+function displayForecast(forecast, element) {
+    element.innerHTML = `
+        <img src="https:${forecast.day.condition.icon}" alt="${forecast.day.condition.text}">
+        <div class="temp">${forecast.day.avgtemp_f.toFixed(2)}°F</div>
+        <div class="condition">${forecast.day.condition.text}</div>
+    `;
+}
+document.addEventListener('DOMContentLoaded', () => {
+    const now = new Date();
+    const dayOfWeek = now.getDay();
+    const banner = document.querySelector('#event-banner');
+
+    if ([1, 2, 3].includes(dayOfWeek)) {
+        // Show banner on Monday (1), Tuesday (2), and Wednesday (3)
+        banner.style.display = 'block';
+    } else {
+        banner.style.display = 'none';
+    }
+});
